@@ -48,3 +48,7 @@ Wow ... first kick at langchain fails in the langchain environment, but then wor
 
  I am noticing in my testing with LMStudio is that the server will just stop working if we hit an error. The only solution is to unload the model, reload and restart the server and then test it with the LMStudio test code. 
 
+ 8) mamba install conda-forge::pypdf
+ 9) mamba install conda-forge::pdfminer
+10) mamba install conda-forge::pdfminer.six
+
