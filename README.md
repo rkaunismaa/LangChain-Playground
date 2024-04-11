@@ -42,3 +42,9 @@ Wow ... first kick at langchain fails in the langchain environment, but then wor
 
  Yup, now it works! So going forward, I will be using the 'langchain3' environment.
 
+ Here is another tutorial I will walk my way through ...
+
+ [LangChain Python Tutorial: The Ultimate Step-by-Step Guide](https://analyzingalpha.com/langchain-python-tutorial)
+
+ I am noticing in my testing with LMStudio is that the server will just stop working if we hit an error. The only solution is to unload the model, reload and restart the server and then test it with the LMStudio test code. 
+
