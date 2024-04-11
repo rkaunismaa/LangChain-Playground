@@ -51,4 +51,8 @@ Wow ... first kick at langchain fails in the langchain environment, but then wor
  8) mamba install conda-forge::pypdf
  9) mamba install conda-forge::pdfminer
 10) mamba install conda-forge::pdfminer.six
+11) pip install lxml
+12) mamba install conda-forge::tiktoken
+13) mamba install conda-forge::sentence-transformers
+14) mamba install conda-forge::ipywidgets
 
