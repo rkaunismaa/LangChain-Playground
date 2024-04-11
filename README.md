@@ -28,4 +28,17 @@ Gawd is it easy to get lost in the weeds as soon as I deviate outside of all the
 
 And looking at the numerous LangChain tutorials on YouTube quickly reveals most of them are from a year ago, so the thinking is they are outdated and may not work with the latest version of LangChain. So, I think the approach should be to use these existing notebooks as a guide on some sequential learning stream, but using the latest version of LangChain and running everything locally. Yes this will make stuff harder, but that is what I want to do.
 
-[A Complete LangChain Guide](https://nanonets.com/blog/langchain/) gonna start from here, cuz why not ...
+[A Complete LangChain Guide](https://nanonets.com/blog/langchain/) gonna start from here, cuz why not ... And the notebooks I create from this guide will be written into the 'nanonets' folder.
+
+Wow ... first kick at langchain fails in the langchain environment, but then works in the langchain2 environment. Hmmm considering creating a new environment for this repository. Yeah, going with this ... 
+
+ 1) mamba create -n langchain3 python=3.11
+ 2) mamba activate langchain3
+ 3) mamba install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+ 4) mamba install conda-forge::jupyterlab
+ 5) mamba install conda-forge::scikit-learn
+ 6) mamba install conda-forge::langchain
+ 7) mamba install conda-forge::openai
+
+ Yup, now it works! So going forward, I will be using the 'langchain3' environment.
+
