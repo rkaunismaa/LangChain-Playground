@@ -4,6 +4,29 @@ This will be my playground for LangChain
 
 *** EVERYTHING WILL BE RUN LOCALLY ***
 
+## Friday, April 12, 2024
+
+15) mamba install conda-forge::chromadb
+16) mamba install conda-forge::faiss
+
+Noticed when faiss was installed, it looks like the cuda version of faiss was installed, which is great ... !
+
+        Package          Version  Build                        Channel         Size
+        ───────────────────────────────────────────────────────────────────────────────
+        Install:
+        ───────────────────────────────────────────────────────────────────────────────
+
+        + libfaiss         1.7.4  cuda112hb18a002_0_cuda       conda-forge     71MB
+        + libfaiss-avx2    1.7.4  cuda112h1234567_0_cuda       conda-forge     71MB
+        + faiss            1.7.4  py311cuda112h9171b99_0_cuda  conda-forge      3MB
+
+        Summary:
+
+        Install: 3 packages
+
+        Total download: 145MB
+
+
 ## Thursday, April 11, 2024
 
 This repository will contain various notebooks and code samples for playing with LangChain. As of today, pip install langchain is at version 0.1.15 and conda-forge is at 0.1.15. 
