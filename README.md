@@ -30,6 +30,55 @@ Noticed when faiss was installed, it looks like the cuda version of faiss was in
 
 Ugh ... some of the code provided in [A Complete LangChain Guide](https://nanonets.com/blog/langchain/) is wrong and not working. Gonna temporarily deviate to another notebook by Greg Kamrdt and come back to this Module 2 - Retrieval.ipynb later ...
 
+Moving onto 'Greg Kamrdt /5_Levels_of_Text_Splitting.ipynb' ...
+
+17) mamba install conda-forge::llama-index
+
+Installing llama-index made these changes to this langchain3 environment ...
+
+        Package                         Version  Build            Channel           Size
+        ────────────────────────────────────────────────────────────────────────────────────
+        Install:
+        ────────────────────────────────────────────────────────────────────────────────────
+
+        + aiostream                       0.5.2  pyhd8ed1ab_0     conda-forge     Cached
+        + dirtyjson                       1.0.8  pyhd8ed1ab_0     conda-forge     Cached
+        + types-futures                   3.3.8  pyhd8ed1ab_0     conda-forge     Cached
+        + types-protobuf        4.25.0.20240410  pyhd8ed1ab_0     conda-forge       59kB
+        + llama-index                    0.9.48  pyhc1e730c_0     conda-forge     Cached
+
+        Downgrade:
+        ────────────────────────────────────────────────────────────────────────────────────
+
+        - libsentencepiece                0.2.0  hb0b37bd_1       conda-forge     Cached
+        + libsentencepiece               0.1.99  hb0b37bd_8       conda-forge      836kB
+        - scikit-learn                    1.4.2  py311hc009520_0  conda-forge     Cached
+        + scikit-learn                    1.2.2  py311hc009520_2  conda-forge     Cached
+        - sentencepiece-spm               0.2.0  hb0b37bd_1       conda-forge     Cached
+        + sentencepiece-spm              0.1.99  hb0b37bd_8       conda-forge       88kB
+        - sentencepiece-python            0.2.0  py311h99063f3_1  conda-forge     Cached
+        + sentencepiece-python           0.1.99  py311h99063f3_8  conda-forge        3MB
+        - sentencepiece                   0.2.0  h38be061_1       conda-forge     Cached
+        + sentencepiece                  0.1.99  h38be061_8       conda-forge       31kB
+
+
+18) pip install unstructured
+19) pip install pdf2image
+
+... ran into an issue with pdf2image ... gonna run the conda install ...
+
+20) mamba install conda-forge::pdf2image
+
+... nope ... still missing pillow_heif ...
+
+21) pip install pillow_heif
+
+... wow ... now complains about cv2 ...
+
+22) mamba install conda-forge::opencv  ... this would have broken the langchain3 environment ... so bailed ... 
+
+OK. For this 'Greg Kamrdt /5_Levels_of_Text_Splitting.ipynb' notebook, I'm going to switch to the 'mls2' conda environment ... it allows us to take this notebook further than the 'langchain3' environment. 
+
 
 ## Thursday, April 11, 2024
 
