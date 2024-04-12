@@ -4,6 +4,8 @@ This will be my playground for LangChain
 
 *** EVERYTHING WILL BE RUN LOCALLY ***
 
+*** mamba activate langchain3 ***
+
 ## Friday, April 12, 2024
 
 15) mamba install conda-forge::chromadb
@@ -25,6 +27,8 @@ Noticed when faiss was installed, it looks like the cuda version of faiss was in
         Install: 3 packages
 
         Total download: 145MB
+
+Ugh ... some of the code provided in [A Complete LangChain Guide](https://nanonets.com/blog/langchain/) is wrong and not working. Gonna temporarily deviate to another notebook by Greg Kamrdt and come back to this Module 2 - Retrieval.ipynb later ...
 
 
 ## Thursday, April 11, 2024
