@@ -1,4 +1,4 @@
-from langchain_core.prompts import ChatPromptTemplate
+from langchain.prompts import ChatPromptTemplate
 import uuid
 from langchain.chat_models import ChatOpenAI
 import os
