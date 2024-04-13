@@ -6,6 +6,10 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Saturday, April 13, 2024
+
+Today I was running some of the code in 'Greg_Kamradt/5_Levels_of_Text_Splitting.ipynb' against OpenAI because I wanted to see what gets returned. 
+
 ## Friday, April 12, 2024
 
 15) mamba install conda-forge::chromadb
@@ -28,9 +32,9 @@ Noticed when faiss was installed, it looks like the cuda version of faiss was in
 
         Total download: 145MB
 
-Ugh ... some of the code provided in [A Complete LangChain Guide](https://nanonets.com/blog/langchain/) is wrong and not working. Gonna temporarily deviate to another notebook by Greg Kamrdt and come back to this Module 2 - Retrieval.ipynb later ...
+Ugh ... some of the code provided in [A Complete LangChain Guide](https://nanonets.com/blog/langchain/) is wrong and not working. Gonna temporarily deviate to another notebook by Greg Kamradt and come back to this Module 2 - Retrieval.ipynb later ...
 
-Moving onto 'Greg Kamrdt /5_Levels_of_Text_Splitting.ipynb' ...
+Moving onto 'Greg_Kamradt/5_Levels_of_Text_Splitting.ipynb' ...
 
 17) mamba install conda-forge::llama-index
 
@@ -77,7 +81,7 @@ Installing llama-index made these changes to this langchain3 environment ...
 
 22) mamba install conda-forge::opencv  ... this would have broken the langchain3 environment ... so bailed ... 
 
-OK. For this 'Greg Kamrdt /5_Levels_of_Text_Splitting.ipynb' notebook, I'm going to switch to the 'mls2' conda environment ... it allows us to take this notebook further than the 'langchain3' environment. 
+OK. For this 'Greg_Kamradt/5_Levels_of_Text_Splitting.ipynb' notebook, I'm going to switch to the 'mls2' conda environment ... it allows us to take this notebook further than the 'langchain3' environment. 
 
 
 ## Thursday, April 11, 2024
