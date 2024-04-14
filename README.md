@@ -6,6 +6,16 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Sunday, April 14, 2024
+
+Starting to go through the [LangChain v0.1.0](https://www.youtube.com/playlist?list=PLfaIDFEXuae0gBSJ9T0w7cu7iJZbH3T31) videos on YouTube by Harrison Chase. This content is from January 2024 ...
+
+mamba activate langchain3
+
+22) mamba install conda-forge::langchain-openai
+23) pip install langchainhub
+24) pip install tavily-python
+
 ## Saturday, April 13, 2024
 
 Today I was running some of the code in 'Greg_Kamradt/5_Levels_of_Text_Splitting.ipynb' against OpenAI because I wanted to see what gets returned. 
