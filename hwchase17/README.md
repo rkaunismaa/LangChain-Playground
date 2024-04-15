@@ -4,4 +4,4 @@ This folder will contain various notebooks and scripts found at the [Github acco
 
 The sub-folders will reflect the names of any repositories found on Github:
 
-* [hwchase17/langchain-01.-guides](https://github.com/hwchase17/langchain-0.1-guides)
+* [LangChain v 0.1.0](https://www.youtube.com/playlist?list=PLfaIDFEXuae0gBSJ9T0w7cu7iJZbH3T31) Youtube video list,  Github repository =>  [hwchase17/langchain-01.-guides](https://github.com/hwchase17/langchain-0.1-guides)
