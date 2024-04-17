@@ -22,6 +22,8 @@ BTW prepending the function call with 'if useOpenAI:' supresses any output, so S
 
 Gonna create a 'Model_Evaluation' sub-folder that will contain notebooks for various local models I want to test through LMStudio. 
 
+Yeah! I want to see exactly what is being sent from Visual Studio Code to LMStudio ... remember Fiddler?? Hmm current searches on 'https debugging proxy' brings up WireShark ... I remember starting to look at this and going nowhere with it ...
+
 ## Sunday, April 14, 2024
 
 Starting to go through the [LangChain v0.1.0](https://www.youtube.com/playlist?list=PLfaIDFEXuae0gBSJ9T0w7cu7iJZbH3T31) videos on YouTube by Harrison Chase. This content is from January 2024 ...
