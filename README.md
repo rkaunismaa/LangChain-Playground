@@ -20,6 +20,8 @@ Yeah. You need to run the cell multiple times to see the results change ... and 
 
 BTW prepending the function call with 'if useOpenAI:' supresses any output, so STOP DOING THAT!.
 
+Gonna create a 'Model_Evaluation' sub-folder that will contain notebooks for various local models I want to test through LMStudio. 
+
 ## Sunday, April 14, 2024
 
 Starting to go through the [LangChain v0.1.0](https://www.youtube.com/playlist?list=PLfaIDFEXuae0gBSJ9T0w7cu7iJZbH3T31) videos on YouTube by Harrison Chase. This content is from January 2024 ...
