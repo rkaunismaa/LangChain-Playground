@@ -18,6 +18,8 @@ And even if you are able to run the cell without errors, it is still important y
 
 Yeah. You need to run the cell multiple times to see the results change ... and understand how the model is working ...
 
+BTW prepending the function call with 'if useOpenAI:' supresses any output, so STOP DOING THAT!.
+
 ## Sunday, April 14, 2024
 
 Starting to go through the [LangChain v0.1.0](https://www.youtube.com/playlist?list=PLfaIDFEXuae0gBSJ9T0w7cu7iJZbH3T31) videos on YouTube by Harrison Chase. This content is from January 2024 ...
