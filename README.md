@@ -6,6 +6,14 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Wednesday, April 17, 2024
+
+Again spinning in that 'what is the best, most current langchain tutorial I should be going through?' question ...
+
+Gonna stick with this [Tutorials](https://python.langchain.com/docs/additional_resources/tutorials/) for now ...
+
+Really experiencing how much the llm results can vary from one run to another ... it is really helpful to run the cell multiple times to see this, especially when using a local model!
+
 ## Sunday, April 14, 2024
 
 Starting to go through the [LangChain v0.1.0](https://www.youtube.com/playlist?list=PLfaIDFEXuae0gBSJ9T0w7cu7iJZbH3T31) videos on YouTube by Harrison Chase. This content is from January 2024 ...
