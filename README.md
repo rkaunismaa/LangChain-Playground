@@ -16,6 +16,10 @@ How do I get tool usage working when running against a local model?? Is this a p
 
 Yeah ... it is definitely a propery of the llm being called.
 
+Doing some testing of Llama 3 from the video [LLaMA 3 Tested!! Yes, It’s REALLY That GREAT](https://www.youtube.com/watch?v=0AaNT7XO41I) by Matthew Berman
+
+26) mamba install conda-forge::pygame
+
 ## Thursday, April 18, 2024
 
 Wow! LLama 3 dropped today!! Downloading stuff from this environment and will then back up the 2 models. 
