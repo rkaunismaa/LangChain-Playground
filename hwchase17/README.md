@@ -1,3 +1,7 @@
+## Friday, April 19, 2024
+
+Stuff is failing for local models when we try to use tools ... ugh. Is there some way to fix this??
+
 ## Sunday, April 14, 2024
 
 This folder will contain various notebooks and scripts found at the [Github account of Harrison Chase](https://github.com/hwchase17), the founder of LangChain. 

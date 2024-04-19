@@ -12,6 +12,8 @@ Continuing to look into LLama3.
 
 Remember, the HuggingFace transformers folder is at: ~/.cache/huggingface/hub
 
+How do I get tool usage working when running against a local model?? Is this a property of the model? Gonna look at the LangChain Discord channel to see if anyone knows ...
+
 ## Thursday, April 18, 2024
 
 Wow! LLama 3 dropped today!! Downloading stuff from this environment and will then back up the 2 models. 
