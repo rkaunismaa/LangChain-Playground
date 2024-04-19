@@ -6,6 +6,21 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Friday, April 19, 2024
+
+Continuing to look into LLama3.
+
+Remember, the HuggingFace transformers folder is at: ~/.cache/huggingface/hub
+
+## Thursday, April 18, 2024
+
+Wow! LLama 3 dropped today!! Downloading stuff from this environment and will then back up the 2 models. 
+
+* [meta-llama/Meta-Llama-3-8B](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
+* [meta-llama/Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct)
+
+25) mamba install conda-forge::accelerate
+
 ## Wednesday, April 17, 2024
 
 Again spinning in that 'what is the best, most current langchain tutorial I should be going through?' question ...
