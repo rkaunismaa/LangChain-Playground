@@ -6,6 +6,16 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Tuesday, April 23, 2024
+
+Continuing to use some fine tune of Llama 3.
+
+Exploring various notebooks found at [LangChain-AI](https://github.com/langchain-ai)
+
+## Saturday, April 20, 2024
+
+I will no longer use this repo for playing with LLama 3, but I will keep the existing code here and replicate it into a new 'Llama-3-Playground' repo.
+
 ## Friday, April 19, 2024
 
 Continuing to look into LLama3.
