@@ -6,6 +6,12 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Saturday, April 27, 2024
+
+Working through 'langchain-ai/rag-from-scratch/rag_from_scratch_10_and_11.ipynb' 
+
+27) mamba install conda-forge::youtube-transcript-api
+
 ## Tuesday, April 23, 2024
 
 Continuing to use some fine tune of Llama 3.
