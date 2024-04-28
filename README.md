@@ -6,11 +6,21 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Sunday, April 28, 2024
+
+Working through 'langchain-ai/rag-from-scratch/rag_from_scratch_12_and_14.ipynb' 
+
+29) pip install RAGatouille
+
+
 ## Saturday, April 27, 2024
 
 Working through 'langchain-ai/rag-from-scratch/rag_from_scratch_10_and_11.ipynb' 
 
 27) mamba install conda-forge::youtube-transcript-api
+28) mamba install conda-forge::pytube
+
+1:47 pm - Just checking with conda forge to see the current version of LangChain is at 0.1.16 which was updated '15 days and 13 hours ago', and looking at pip, 0.1.16 was released on April 11, 2024. I am really reluctant to update to 0.1.16 because I am not sure if it will break anything.
 
 ## Tuesday, April 23, 2024
 
