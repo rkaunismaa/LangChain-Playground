@@ -6,6 +6,33 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Monday, April 29, 2024
+
+Working through 'langchain-ai/rag-from-scratch/rag_from_scratch_15_and_18.ipynb'
+
+30) pip install cohere
+
+        ...
+        Installing collected packages: httpx-sse, fastavro, tokenizers, cohere
+        Attempting uninstall: tokenizers
+        Found existing installation: tokenizers 0.15.2
+        Uninstalling tokenizers-0.15.2:
+        Successfully uninstalled tokenizers-0.15.2
+        ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+        chromadb 0.4.24 requires onnxruntime>=1.14.1, which is not installed.
+        transformers 4.39.3 requires tokenizers<0.19,>=0.14, but you have tokenizers 0.19.1 which is incompatible.
+
+
+ffs! installing cohere broke other packages!! ... this notebook is now complaining about sentence-transformers, so let's re-run the install ... 
+
+31) mamba install conda-forge::sentence-transformers
+
+Nope! Still broken ... complaining about 'tokenizers' ... so lets run ...
+
+32) mamba install conda-forge::tokenizers
+
+OK Nice! That did fix the problem! The notebook now runs locally!
+
 ## Sunday, April 28, 2024
 
 Working through 'langchain-ai/rag-from-scratch/rag_from_scratch_12_and_14.ipynb' 
