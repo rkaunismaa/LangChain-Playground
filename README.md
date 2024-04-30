@@ -6,6 +6,14 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Tuesday, April 30, 2024
+
+Working through the Sam Witteveen video tutorial [Creating an AI Agent with LangGraph Llama 3 & Groq](https://www.youtube.com/watch?v=lvQ96Ssesfk), and yes, I want to not use OpenAI or Groq but attempt to run everything locally.
+
+This video is really about using langgraph, which I am looking at for the first time here.
+
+31) pip install langgraph
+
 ## Monday, April 29, 2024
 
 Working through 'langchain-ai/rag-from-scratch/rag_from_scratch_15_and_18.ipynb'
