@@ -6,9 +6,20 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Wednesday, May 1, 2024
+
+Starting to look into [OpenAI Function Calling](https://platform.openai.com/docs/guides/function-calling). I will use the local model "TheBloke/NexusRaven-V2-13B-GGUF/nexusraven-v2-13b.Q8_0.gguf" served up by LMStudio for this. The code samples will reside in the 'Function_Calling' folder.
+
+The details of this model can be found at [Nexusflow/NexusRaven-V2-13B](https://huggingface.co/Nexusflow/NexusRaven-V2-13B)
+
+Also going through [How to use functions with a knowledge base](https://github.com/openai/openai-cookbook/blob/main/examples/How_to_call_functions_for_knowledge_retrieval.ipynb)
+
+32) mamba install conda-forge::termcolor
+33) mamba install conda-forge::arxiv
+
 ## Tuesday, April 30, 2024
 
-Working through the Sam Witteveen video tutorial [Creating an AI Agent with LangGraph Llama 3 & Groq](https://www.youtube.com/watch?v=lvQ96Ssesfk), and yes, I want to not use OpenAI or Groq but attempt to run everything locally.
+Working through the Sam Witteveen video tutorial [Creating an AI Agent with LangGraph Llama 3 & Groq](https://www.youtube.com/watch?v=lvQ96Ssesfk), and yes, I will not be using OpenAI or Groq but attempt to run everything locally.
 
 This video is really about using langgraph, which I am looking at for the first time here.
 
