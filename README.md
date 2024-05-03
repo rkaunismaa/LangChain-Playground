@@ -6,6 +6,14 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Friday, May 3, 2024
+
+More Sam Witteveen goodness ... [Adding RAG to LangGraph Agents](https://www.youtube.com/watch?v=WyIWaopiUEo)
+
+* Sam_Witteveen/YT_Adding_RAG_to_LangGraph_Agents_WestWorld.ipynb
+
+34) pip install langchain-chroma
+
 ## Wednesday, May 1, 2024
 
 Starting to look into [OpenAI Function Calling](https://platform.openai.com/docs/guides/function-calling). I will use the local model "TheBloke/NexusRaven-V2-13B-GGUF/nexusraven-v2-13b.Q8_0.gguf" served up by LMStudio for this. The code samples will reside in the 'Function_Calling' folder.
