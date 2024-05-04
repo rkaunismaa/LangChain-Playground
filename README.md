@@ -35,6 +35,90 @@ So to play with function calling, I cannot use LMStudio! ... I did not know that
 
         python functioncall.py --query "I need the current stock price of Tesla (TSLA)"
 
+OK! Nice! I got the above function call to actually work! I terminalled into the ~/Data/Documents/Github/NousResearch/Hermes-Function-Calling$ 
+ folder, activated the lanchain3 conda environment, then ran that command. It worked! 
+
+        2024-05-04:19:12:37,957 INFO     [functioncall.py:156] Assistant Message:
+        The current stock price of Tesla (TSLA) is $181.19. Let me find more information about Tesla's fundamentals, financial statements, analyst recommendations, and other relevant data. 
+
+        In the next iteration, I'll begin with getting the fundamental data for TSLA.
+
+Hmm ran it again, but this time it did not work ...
+
+        (langchain3) rob@KAUWITB:~/Data/Documents/Github/NousResearch/Hermes-Function-Calling$ python functioncall.py --query "I need the current stock price of Tesla (TSLA)"
+        /home/rob/miniforge3/envs/langchain3/lib/python3.11/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+        warnings.warn(
+                                                                                                                dP       
+                                                                                                                88       
+        88d888b. .d8888b. dP    dP .d8888b. 88d888b. .d8888b. .d8888b. .d8888b. .d8888b. 88d888b. .d8888b. 88d888b. 
+        88'  `88 88'  `88 88    88 Y8ooooo. 88'  `88 88ooood8 Y8ooooo. 88ooood8 88'  `88 88'  `88 88'  `"" 88'  `88 
+        88    88 88.  .88 88.  .88       88 88       88.  ...       88 88.  ... 88.  .88 88       88.  ... 88    88 
+        dP    dP `88888P' `88888P' `88888P' dP       `88888P' `88888P' `88888P' `88888P8 dP       `88888P' dP    dP 
+                                                                                                                        
+                                                                                                                        
+
+        2024-05-04:19:16:17,866 INFO     [functioncall.py:26] None
+        Downloading shards: 100%|██████████████████████| 4/4 [00:00<00:00, 14488.10it/s]
+        2024-05-04:19:16:19,221 INFO     [modeling.py:987] We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+        Loading checkpoint shards: 100%|██████████████████| 4/4 [00:04<00:00,  1.19s/it]
+        Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+        2024-05-04:19:16:24,803 INFO     [functioncall.py:54] LlamaConfig {
+        "_name_or_path": "NousResearch/Hermes-2-Pro-Llama-3-8B",
+        "architectures": [
+        "LlamaForCausalLM"
+        ],
+        "attention_bias": false,
+        "attention_dropout": 0.0,
+        "bos_token_id": 128000,
+        "eos_token_id": 128003,
+        "hidden_act": "silu",
+        "hidden_size": 4096,
+        "initializer_range": 0.02,
+        "intermediate_size": 14336,
+        "max_position_embeddings": 8192,
+        "model_type": "llama",
+        "num_attention_heads": 32,
+        "num_hidden_layers": 32,
+        "num_key_value_heads": 8,
+        "pretraining_tp": 1,
+        "rms_norm_eps": 1e-05,
+        "rope_scaling": null,
+        "rope_theta": 500000.0,
+        "tie_word_embeddings": false,
+        "torch_dtype": "float16",
+        "transformers_version": "4.40.1",
+        "use_cache": false,
+        "vocab_size": 128288
+        }
+
+        2024-05-04:19:16:24,803 INFO     [functioncall.py:55] GenerationConfig {
+        "bos_token_id": 128000,
+        "do_sample": true,
+        "eos_token_id": 128003
+        }
+
+        2024-05-04:19:16:24,804 INFO     [functioncall.py:56] {'bos_token': '<|begin_of_text|>', 'eos_token': '<|im_end|>', 'pad_token': '<|im_end|>'}
+        The attention mask and the pad token id were not set. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+        Setting `pad_token_id` to `eos_token_id`:128003 for open-end generation.
+        2024-05-04:19:16:25,190 WARNING  [functioncall.py:72] Assistant message is None
+        2024-05-04:19:16:25,190 ERROR    [functioncall.py:161] Exception occurred: Assistant message is None
+        Traceback (most recent call last):
+        File "/home/rob/Data/Documents/Github/NousResearch/Hermes-Function-Calling/functioncall.py", line 186, in <module>
+        inference.generate_function_call(args.query, args.chat_template, args.num_fewshot, args.max_depth)
+        File "/home/rob/Data/Documents/Github/NousResearch/Hermes-Function-Calling/functioncall.py", line 162, in generate_function_call
+        raise e
+        File "/home/rob/Data/Documents/Github/NousResearch/Hermes-Function-Calling/functioncall.py", line 158, in generate_function_call
+        recursive_loop(prompt, completion, depth)
+        File "/home/rob/Data/Documents/Github/NousResearch/Hermes-Function-Calling/functioncall.py", line 114, in recursive_loop
+        tool_calls, assistant_message, error_message = self.process_completion_and_validate(completion, chat_template)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/rob/Data/Documents/Github/NousResearch/Hermes-Function-Calling/functioncall.py", line 73, in process_completion_and_validate
+        raise ValueError("Assistant message is None")
+        ValueError: Assistant message is None
+
+Gonna look into this later ... 
+
+
 ## Friday, May 3, 2024
 
 More Sam Witteveen goodness ... [Adding RAG to LangGraph Agents](https://www.youtube.com/watch?v=WyIWaopiUEo)
