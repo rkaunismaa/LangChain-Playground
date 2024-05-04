@@ -6,6 +6,32 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Saturday, May 4, 2024
+
+Exploring the function calling abilities of [NousResearch/Hermes-2-Pro-Llama-3-8B](https://huggingface.co/NousResearch/Hermes-2-Pro-Llama-3-8B)
+
+35) mamba install conda-forge::bitsandbytes
+
+Dammit! Again, after running the conda install of bitsandbytes and then importing, we get the message ...
+
+        Could not find the bitsandbytes CUDA binary at PosixPath('/home/rob/miniforge3/envs/langchain3/lib/python3.11/site-packages/bitsandbytes/libbitsandbytes_cuda118.so')
+        The installed version of bitsandbytes was compiled without GPU support. 8-bit optimizers, 8-bit multiplication, and GPU quantization are unavailable.
+
+36) mamba remove bitsandbytes
+37) pip install bitsandbytes
+
+Yup! That message no longer appears upon import of bitsandbytes.
+
+Wow! Reading from [NousResearch/Hermes-2-Pro-Llama-3-8B](https://huggingface.co/NousResearch/Hermes-2-Pro-Llama-3-8B) reveals ...
+
+        When quantized versions of the model are released, I recommend using LM Studio for chatting with Hermes 2 Pro. It does not support function calling - for that use our github repo. It is a GUI application that utilizes GGUF models with a llama.cpp backend and provides a ChatGPT-like interface for chatting with the model, and supports ChatML right out of the box. 
+
+So to play with function calling, I cannot use LMStudio! ... I did not know that! ... Good to know, so will play with function calling in jupyter notebooks loading Hermes using HuggingFace transformers.
+
+* Function_Calling/Hermes-2-Pro-Llama-3-8B.ipynb
+
+
+
 ## Friday, May 3, 2024
 
 More Sam Witteveen goodness ... [Adding RAG to LangGraph Agents](https://www.youtube.com/watch?v=WyIWaopiUEo)
@@ -13,6 +39,12 @@ More Sam Witteveen goodness ... [Adding RAG to LangGraph Agents](https://www.you
 * Sam_Witteveen/YT_Adding_RAG_to_LangGraph_Agents_WestWorld.ipynb
 
 34) pip install langchain-chroma
+
+Looks like there is another new model that excels with function calling called [NousResearch/Hermes-2-Pro-Llama-3-8B](https://huggingface.co/NousResearch/Hermes-2-Pro-Llama-3-8B).
+
+I have downloaded a quantized version of this [NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF](https://huggingface.co/NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF) to LMStudio and am going to explore its performance. You can explore the function calling capabilities at [Hermes-Function-Calling](https://github.com/NousResearch/Hermes-Function-Calling)
+
+Dammit! The actual model I downloaded was 'https://huggingface.co/NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF/resolve/main/Hermes-2-Pro-Llama-3-8B-F16.gguf', and it DOES NOT fully load to the 4090 GPU! Ugh, so instead I am now downloading 'https://huggingface.co/NousResearch/Hermes-2-Pro-Llama-3-8B-GGUF/resolve/main/Hermes-2-Pro-Llama-3-8B-Q8_0.gguf' which I am certain will fit. Yup! It fits!
 
 ## Wednesday, May 1, 2024
 
