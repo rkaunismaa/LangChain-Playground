@@ -30,7 +30,10 @@ So to play with function calling, I cannot use LMStudio! ... I did not know that
 
 * Function_Calling/Hermes-2-Pro-Llama-3-8B.ipynb
 
+38) pip install yfinance
+39) pip install art
 
+        python functioncall.py --query "I need the current stock price of Tesla (TSLA)"
 
 ## Friday, May 3, 2024
 
