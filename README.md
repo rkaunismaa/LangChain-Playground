@@ -6,6 +6,14 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Tuesday, May 7, 2024
+
+Trying to run [Local RAG agent with LLama3](https://github.com/langchain-ai/langgraph/blob/main/examples/rag/langgraph_rag_agent_llama3_local.ipynb)
+
+How am I expected to trust the results if the calling the same function 4 times produces 4 different results?!? ... 
+
+38) pip install gpt4all
+
 ## Saturday, May 4, 2024
 
 Exploring the function calling abilities of [NousResearch/Hermes-2-Pro-Llama-3-8B](https://huggingface.co/NousResearch/Hermes-2-Pro-Llama-3-8B)
