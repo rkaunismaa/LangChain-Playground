@@ -6,6 +6,14 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Wednesday, May 8, 2024
+
+Today I needed to install some more libraries to accomodate some notebooks I was running locally in the repo [LLama3_Playground](https://github.com/rkaunismaa/Llama-3-Playground)
+
+39) pip install groq
+40) pip install matplotlib
+41) pip install langchain-groq
+
 ## Tuesday, May 7, 2024
 
 Trying to run [Local RAG agent with LLama3](https://github.com/langchain-ai/langgraph/blob/main/examples/rag/langgraph_rag_agent_llama3_local.ipynb)
