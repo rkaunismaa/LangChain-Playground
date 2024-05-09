@@ -14,6 +14,8 @@ Working through the code referenced in the Sam Witteveen video [Function Calling
 
 Installing the current release of langchain-experimental (0.0.58) would have installed a newer version of langchain, so I installed langchain-experimental==0.0.57 instead.
 
+I cloned langchain3 to langchain4, then uninstalled/installed langchain_experimental in langchain4 to get this notebook to work. 
+
 ## Wednesday, May 8, 2024
 
 Today I needed to install some more libraries to accomodate some notebooks I was running locally in the repo [LLama3_Playground](https://github.com/rkaunismaa/Llama-3-Playground)
