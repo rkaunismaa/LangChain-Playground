@@ -6,6 +6,14 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Thursday, May 9, 2024
+
+Working through the code referenced in the Sam Witteveen video [Function Calling with Local Models & LangChain - Ollama, Llama3 & Phi-3](https://www.youtube.com/watch?v=Ss_GdU0KqE0). The code was replicated into the notebook 'Sam_Witteveen/Function_Calling_with_Local_Models.ipynb'
+
+42) pip install langchain-experimental==0.0.57
+
+Installing the current release of langchain-experimental (0.0.58) would have installed a newer version of langchain, so I installed langchain-experimental==0.0.57 instead.
+
 ## Wednesday, May 8, 2024
 
 Today I needed to install some more libraries to accomodate some notebooks I was running locally in the repo [LLama3_Playground](https://github.com/rkaunismaa/Llama-3-Playground)
