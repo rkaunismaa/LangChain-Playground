@@ -6,6 +6,12 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Friday, May 17, 2024
+
+Gonna investigate [Tool Calling with LangChain](https://www.youtube.com/watch?v=zCwuAlpQKTM)
+
+Actually, gonna run through 'How_to_call_functions_for_knowledge_retrieval.ipynb' cuz I don't think I ever did.
+
 ## Thursday, May 9, 2024
 
 Working through the code referenced in the Sam Witteveen video [Function Calling with Local Models & LangChain - Ollama, Llama3 & Phi-3](https://www.youtube.com/watch?v=Ss_GdU0KqE0). The code was replicated into the notebook 'Sam_Witteveen/Function_Calling_with_Local_Models.ipynb'
