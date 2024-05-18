@@ -6,6 +6,10 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Saturday, May 18, 2024
+
+Downloaded the updated version of the notebook 'How_to_call_functions_with_chat_models.ipynb' to 'How_to_call_functions_with_chat_models_(gpt-4o).ipynb'
+
 ## Friday, May 17, 2024
 
 Gonna investigate [Tool Calling with LangChain](https://www.youtube.com/watch?v=zCwuAlpQKTM)
