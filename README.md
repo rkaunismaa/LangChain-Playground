@@ -6,6 +6,10 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Sunday, May 26, 2024
+
+[mistralai/Mistral-7B-Instruct-v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3) dropped 4 days ago, and supports function calling. Let's download this model and play ...
+
 ## Saturday, May 18, 2024
 
 Downloaded the updated version of the notebook 'How_to_call_functions_with_chat_models.ipynb' to 'How_to_call_functions_with_chat_models_(gpt-4o).ipynb'
