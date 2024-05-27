@@ -26,6 +26,9 @@ Instead, I will clone the conda environment ftllm that has pytorch 2.3.0, and us
 
  4) pip install mistralai
 
+ 5) mamba install conda-forge::scikit-learn
+ 
+
 ## Sunday, May 26, 2024
 
 [mistralai/Mistral-7B-Instruct-v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3) dropped 4 days ago, and supports function calling. Let's download this model and play ...
