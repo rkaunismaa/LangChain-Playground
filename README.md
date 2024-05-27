@@ -6,6 +6,26 @@ This will be my playground for LangChain
 
 *** mamba activate langchain3 ***
 
+## Monday, May 27, 2024
+
+Continuing to look into [mistralai/Mistral-7B-Instruct-v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3). 
+
+<strike>mamba activate langchain3</strike>
+
+* pip install mistral_inference ... ran this against langchain3 and it wants to change a lot of stuff, so I bailed on this. 
+
+Instead, I will clone the conda environment ftllm that has pytorch 2.3.0, and use this. 
+
+ 1) mamba create --name mistral --clone ftllm
+ 2) mamba activate mistral
+ 3) pip install mistral_inference
+
+ mamba activate mistral
+
+ Downloaded a few more 'Mistral-7B-Instruct-v0.3' notebooks into the 'Model_Evaluation/mistralai/Mistral-7B-Instruct-v0.3 ' folder. Yeah, initially nothing langchain related, but will get there once I have stepped through these notebooks. 
+
+ 4) pip install mistralai
+
 ## Sunday, May 26, 2024
 
 [mistralai/Mistral-7B-Instruct-v0.3](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3) dropped 4 days ago, and supports function calling. Let's download this model and play ...
