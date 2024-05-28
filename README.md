@@ -27,6 +27,7 @@ Instead, I will clone the conda environment ftllm that has pytorch 2.3.0, and us
  4) pip install mistralai
 
  5) mamba install conda-forge::scikit-learn
+ 6) pip install matplotlib ('mamba install conda-forge::matplotlib' would have changed a lot of libraries, so I did not run this.)
  
 
 ## Sunday, May 26, 2024
