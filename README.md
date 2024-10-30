@@ -452,7 +452,7 @@ Wow ... first kick at langchain fails in the langchain environment, but then wor
 
 ## Wednesday, October 30, 2024
 
-Yup, getting back to this. Running stuff from the kitchen computer with the 2070 super card. Today I created a new langchain conda environment for this. 
+Yup, getting back to this. Running stuff from the kitchen computer with the 2070 Super card. Today I created a new langchain conda environment for this. 
 
  1) mamba create -n langchain python=3.12
  2) mamba activate langchain
@@ -460,4 +460,22 @@ Yup, getting back to this. Running stuff from the kitchen computer with the 2070
  4) mamba install conda-forge::jupyterlab
 
  Going to start with [Build a Simple LLM Application with LCEL](https://python.langchain.com/docs/tutorials/llm_chain/). Ugh the documentation is still lacking with examples on how to run a local large language model. So I am going to go with using LMStudio and the OpenAI API. And I recall a lot of the notebooks in this repository attempt to demonstrate using both the OpenAI models and local models, with the OpenAI models always working better than any local model.
+
+ Here is the current versions of the langchain environment:
+
+        (langchain) rob@rob-MS-7C91:~/Data/Documents/Github/rkaunismaa/LangChain-Playground$ mamba list lang
+        # packages in environment at /home/rob/miniforge3/envs/langchain:
+        #
+        # Name                    Version                   Build  Channel
+        langchain                 0.3.5              pyhd8ed1ab_0    conda-forge
+        langchain-core            0.3.13             pyhd8ed1ab_0    conda-forge
+        langchain-text-splitters  0.3.1              pyhd8ed1ab_0    conda-forge
+        langsmith                 0.1.129            pyhd8ed1ab_0    conda-forge
+
+Hmm looking at some of the current notebooks ... where is Mistral these days? When was the last time they put out a new model?
+
+Hmm no LangChain account? Did I sign up with it through github??
+Dammit! Trying to sign up with my yahoo email but no confirmation email is ever sent! WTF?!
+
+Jeeze. Signed up through LangSmith ... sigh. 
 
