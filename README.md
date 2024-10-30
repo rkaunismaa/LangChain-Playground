@@ -479,3 +479,8 @@ Dammit! Trying to sign up with my yahoo email but no confirmation email is ever 
 
 Jeeze. Signed up through LangSmith ... sigh. 
 
+ 5) mamba install conda-forge::openai
+ 6) mamba install conda-forge::langchain-openai
+ 7) pip install "langserve[all]"
+
+Nice! Got some of the new stuff to work locally against a model (hermes-3-llama-3.1-8b) served up by LMStudio.
