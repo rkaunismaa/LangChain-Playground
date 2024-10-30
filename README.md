@@ -450,3 +450,14 @@ Wow ... first kick at langchain fails in the langchain environment, but then wor
 13) mamba install conda-forge::sentence-transformers
 14) mamba install conda-forge::ipywidgets
 
+## Wednesday, October 30, 2024
+
+Yup, getting back to this. Running stuff from the kitchen computer with the 2070 super card. Today I created a new langchain conda environment for this. 
+
+ 1) mamba create -n langchain python=3.12
+ 2) mamba activate langchain
+ 3) mamba install conda-forge::langchain
+ 4) mamba install conda-forge::jupyterlab
+
+ Going to start with [Build a Simple LLM Application with LCEL](https://python.langchain.com/docs/tutorials/llm_chain/). Ugh the documentation is still lacking with examples on how to run a local large language model. So I am going to go with using LMStudio and the OpenAI API. And I recall a lot of the notebooks in this repository attempt to demonstrate using both the OpenAI models and local models, with the OpenAI models always working better than any local model.
+
