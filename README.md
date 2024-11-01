@@ -484,3 +484,39 @@ Jeeze. Signed up through LangSmith ... sigh.
  7) pip install "langserve[all]"
 
 Nice! Got some of the new stuff to work locally against a model (hermes-3-llama-3.1-8b) served up by LMStudio.
+
+## Friday, November 1, 2024
+
+ 8) mamba install conda-forge::langgraph
+
+ Wow. Some LangChain stuff does not work if it does not recognize the model! Running stuff through LMStudio breaks some code but only if you pass in an unrecognized model name, such as "hermes-3-llama-3.1-8b".
+
+  9) mamba install conda-forge::langchain-chroma
+
+Running the above would have changed numerous installed packages ...
+
+        Downgrade:
+        ───────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+        - importlib-metadata                              8.5.0  pyha770c72_0            conda-forge     Cached
+        + importlib-metadata                              7.0.2  pyha770c72_0            conda-forge       27kB
+        - langchain-core                                 0.3.15  pyhd8ed1ab_0            conda-forge     Cached
+        + langchain-core                                 0.2.40  pyhd8ed1ab_0            conda-forge      260kB
+        - importlib_metadata                              8.5.0  hd8ed1ab_0              conda-forge     Cached
+        + importlib_metadata                              7.0.2  hd8ed1ab_0              conda-forge        9kB
+        - langgraph                                      0.2.43  pyhd8ed1ab_0            conda-forge     Cached
+        + langgraph                                      0.2.40  pyhd8ed1ab_0            conda-forge       88kB
+        - langchain-text-splitters                        0.3.1  pyhd8ed1ab_0            conda-forge     Cached
+        + langchain-text-splitters                        0.2.4  pyhd8ed1ab_0            conda-forge       27kB
+        - langchain-openai                                0.2.4  pyhd8ed1ab_0            conda-forge     Cached
+        + langchain-openai                               0.1.25  pyhd8ed1ab_0            conda-forge       38kB
+        - langchain                                       0.3.5  pyhd8ed1ab_0            conda-forge     Cached
+        + langchain                                      0.2.16  pyhd8ed1ab_0            conda-forge      429kB
+
+Hmm so as a workaround, I am gonna create a new 'langchain-chroma' environment from the current langchain environment, and run the install against that.
+
+ 1) mamba create -n langchain-chroma --clone langchain
+ 2) mamba activate langchain-chroma
+ 3) mamba install conda-forge::langchain-chroma
+
+ Hmm running the above installs CUDA to the langchain-chroma environment.
