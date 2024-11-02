@@ -520,3 +520,428 @@ Hmm so as a workaround, I am gonna create a new 'langchain-chroma' environment f
  3) mamba install conda-forge::langchain-chroma
 
  Hmm running the above installs CUDA to the langchain-chroma environment.
+
+ 4) mamba install conda-forge::curl
+
+Hmmm gonna attempt running the code found in this [Local RAG Chatbot](https://github.com/grasool/Local-RAG-Chatbot) repository. I will implement this in a 'Local RAG Chatbot' folder, using the langchain-chroma environment.
+
+ 5) pip install langchain-community
+
+ Oh FFS! Running the above broke the langchain-chroma environment!! 😠
+
+ 
+        Installing collected packages: mypy-extensions, marshmallow, typing-inspect, pydantic-settings, dataclasses-json, langchain-core, langchain-text-splitters, langchain, langchain-community
+        Attempting uninstall: langchain-core
+        Found existing installation: langchain-core 0.2.40
+        Uninstalling langchain-core-0.2.40:
+        Successfully uninstalled langchain-core-0.2.40
+        Attempting uninstall: langchain-text-splitters
+        Found existing installation: langchain-text-splitters 0.2.4
+        Uninstalling langchain-text-splitters-0.2.4:
+        Successfully uninstalled langchain-text-splitters-0.2.4
+        Attempting uninstall: langchain
+        Found existing installation: langchain 0.2.16
+        Uninstalling langchain-0.2.16:
+        Successfully uninstalled langchain-0.2.16
+        ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+        langchain-openai 0.1.25 requires langchain-core<0.3.0,>=0.2.40, but you have langchain-core 0.3.15 which is incompatible.
+        Successfully installed dataclasses-json-0.6.7 langchain-0.3.6 langchain-community-0.3.4 langchain-core-0.3.15 langchain-text-splitters-0.3.1 marshmallow-3.23.1 mypy-extensions-1.0.0 pydantic-settings-2.6.1 typing-inspect-0.9.0
+
+Hmm gonna continue just to see what happens ...
+
+ 6) mamba install conda-forge::sentence-transformers ... ugh, did NOT run this because it wants to install the cpu version of pytorch!! Hmm I am gonna first run the install for pytorch ... (current version of cuda in 'langchain-chroma' is 11.8 ... )
+
+ 6) mamba install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
+ (Yeah, remembering one of the reasons I bailed on LangChain was because of these version conflicts!!)
+
+OK. NOW I am gonna install senetence-transformers ...
+
+ 7) mamba install conda-forge::sentence-transformers
+ 8) mamba install conda-forge::ipywidgets
+
+ Whelp, right now I am thinking of starting over with langchain-chroma, but this time starting with an older version of langchain ... but which?? Dammit, yeah, gonna torch the current langchain-chroma environment and start over with langchain-chroma-v0.2.16 ...
+
+  1) mamba remove -n langchain-chroma --all
+  2) mamba create -n langchain-chroma python=3.11
+  3) mamba activate langchain-chroma
+  4) mamba install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+  5) mamba install conda-forge::sentence-transformers
+  6) mamba install conda-forge::jupyterlab
+  7) mamba install conda-forge::ipywidgets
+
+OK. So at this point, there is no langchain anything installed. So what version should I install??
+
+        (langchain-chroma) rob@rob-MS-7C91:~$ mamba install conda-forge::langchain==0.2.4
+
+        Looking for: ['conda-forge::langchain==0.2.4']
+
+        conda-forge/noarch                                  17.1MB @   3.1MB/s  5.6s
+        conda-forge/noarch                                  17.1MB @   2.6MB/s  6.7s
+        conda-forge/linux-64                                39.4MB @   3.7MB/s 10.9s
+        conda-forge/linux-64                                39.4MB @   3.3MB/s 12.2s
+
+        Pinned packages:
+        - python 3.11.*
+
+
+        Transaction
+
+        Prefix: /home/rob/miniforge3/envs/langchain-chroma
+
+        Updating specs:
+
+        - conda-forge::langchain==0.2.4
+        - ca-certificates
+        - certifi
+        - openssl
+
+
+        Package                       Version  Build              Channel           Size
+        ────────────────────────────────────────────────────────────────────────────────────
+        Install:
+        ────────────────────────────────────────────────────────────────────────────────────
+
+        + click                         8.1.7  unix_pyh707e725_0  conda-forge     Cached
+        + async-timeout                 4.0.3  pyhd8ed1ab_0       conda-forge     Cached
+        + tenacity                      8.5.0  pyhd8ed1ab_0       conda-forge     Cached
+        + jsonpatch                      1.33  pyhd8ed1ab_0       conda-forge     Cached
+        + pyarrow-hotfix                  0.6  pyhd8ed1ab_0       conda-forge       14kB
+        + marshmallow                  3.23.0  pyhd8ed1ab_0       conda-forge       93kB
+        + mypy_extensions               1.0.0  pyha770c72_0       conda-forge       10kB
+        + annotated-types               0.7.0  pyhd8ed1ab_0       conda-forge     Cached
+        + nltk                          3.9.1  pyhd8ed1ab_0       conda-forge        1MB
+        + typing_inspect                0.9.0  pyhd8ed1ab_0       conda-forge       15kB
+        + dataclasses-json              0.6.7  pyhd8ed1ab_0       conda-forge       30kB
+        + greenlet                      3.1.1  py311hfdbb021_0    conda-forge      240kB
+        + libsentencepiece              0.2.0  hc20e799_5         conda-forge      823kB
+        + pydantic-core                2.23.4  py311h9e33e62_0    conda-forge        2MB
+        + orjson                      3.10.10  py311h9e33e62_0    conda-forge      310kB
+        + sqlalchemy                   2.0.36  py311h9ecbd09_0    conda-forge        4MB
+        + sentencepiece-spm             0.2.0  hc20e799_5         conda-forge       87kB
+        + sentencepiece-python          0.2.0  py311h5c6ee89_5    conda-forge        2MB
+        + sentencepiece                 0.2.0  h38be061_5         conda-forge       17kB
+        + pydantic                      2.9.2  pyhd8ed1ab_0       conda-forge     Cached
+        + langsmith                   0.1.129  pyhd8ed1ab_0       conda-forge     Cached
+        + langchain-core               0.2.40  pyhd8ed1ab_0       conda-forge     Cached
+        + langchain-text-splitters      0.2.4  pyhd8ed1ab_0       conda-forge     Cached
+        + langchain                     0.2.4  pyhd8ed1ab_0       conda-forge      416kB
+
+        Upgrade:
+        ────────────────────────────────────────────────────────────────────────────────────
+
+        - datasets                     2.14.4  pyhd8ed1ab_0       conda-forge     Cached
+        + datasets                     2.21.0  pyhd8ed1ab_0       conda-forge      363kB
+
+        Downgrade:
+        ────────────────────────────────────────────────────────────────────────────────────
+
+        - fsspec                    2024.10.0  pyhff2d567_0       conda-forge     Cached
+        + fsspec                     2024.5.0  pyhff2d567_0       conda-forge      216kB
+        - numpy                         2.1.2  py311h71ddf71_0    conda-forge     Cached
+        + numpy                        1.26.4  py311h64a7726_0    conda-forge        8MB
+        - sentence-transformers         3.2.1  pyhd8ed1ab_0       conda-forge     Cached
+        + sentence-transformers         2.7.0  pyhd8ed1ab_0       conda-forge      109kB
+
+        Summary:
+
+        Install: 24 packages
+        Upgrade: 1 packages
+        Downgrade: 3 packages
+
+        Total download: 19MB
+
+        ────────────────────────────────────────────────────────────────────────────────────
+
+
+        Confirm changes: [Y/n] n
+
+Nope! Not gonna install that ... what about a higher version??
+
+
+        (langchain-chroma) rob@rob-MS-7C91:~$ mamba install conda-forge::langchain==0.2.16
+
+        Looking for: ['conda-forge::langchain==0.2.16']
+
+        conda-forge/linux-64                                        Using cache
+        conda-forge/noarch                                          Using cache
+        conda-forge/linux-64                                        Using cache
+        conda-forge/noarch                                          Using cache
+
+        Pinned packages:
+        - python 3.11.*
+
+
+        Transaction
+
+        Prefix: /home/rob/miniforge3/envs/langchain-chroma
+
+        Updating specs:
+
+        - conda-forge::langchain==0.2.16
+        - ca-certificates
+        - certifi
+        - openssl
+
+
+        Package                     Version  Build            Channel           Size
+        ────────────────────────────────────────────────────────────────────────────────
+        Install:
+        ────────────────────────────────────────────────────────────────────────────────
+
+        + greenlet                    3.1.1  py311hfdbb021_0  conda-forge      240kB
+        + pydantic-core              2.23.4  py311h9e33e62_0  conda-forge        2MB
+        + orjson                    3.10.10  py311h9e33e62_0  conda-forge      310kB
+        + sqlalchemy                 2.0.36  py311h9ecbd09_0  conda-forge        4MB
+        + async-timeout               4.0.3  pyhd8ed1ab_0     conda-forge     Cached
+        + tenacity                    8.5.0  pyhd8ed1ab_0     conda-forge     Cached
+        + annotated-types             0.7.0  pyhd8ed1ab_0     conda-forge     Cached
+        + jsonpatch                    1.33  pyhd8ed1ab_0     conda-forge     Cached
+        + pydantic                    2.9.2  pyhd8ed1ab_0     conda-forge     Cached
+        + langsmith                 0.1.129  pyhd8ed1ab_0     conda-forge     Cached
+        + langchain-core             0.2.40  pyhd8ed1ab_0     conda-forge     Cached
+        + langchain-text-splitters    0.2.4  pyhd8ed1ab_0     conda-forge     Cached
+        + langchain                  0.2.16  pyhd8ed1ab_0     conda-forge     Cached
+
+        Downgrade:
+        ────────────────────────────────────────────────────────────────────────────────
+
+        - numpy                       2.1.2  py311h71ddf71_0  conda-forge     Cached
+        + numpy                      1.26.4  py311h64a7726_0  conda-forge        8MB
+
+        Summary:
+
+        Install: 13 packages
+        Downgrade: 1 packages
+
+        Total download: 14MB
+
+        ────────────────────────────────────────────────────────────────────────────────
+
+
+        Confirm changes: [Y/n] 
+
+Hmm yeah, going with 0.2.16 ....
+
+ 8) mamba install conda-forge::langchain==0.2.16
+ 9) mamba install conda-forge::openai
+
+Now let's continue with the other langchain packages ...
+
+10) mamba install conda-forge::langchain-chroma ...NOPE! This version 0.1.4 would change a ton of stuff! ..
+10) mamba install conda-forge::langchain-chroma=0.1.3 ... wow! Same with this version ... keep going ...
+10) mamba install conda-forge::langchain-chroma=0.1.2 ... still nope! All there want to downgrade a lot of libraries ... sigh.
+
+This makes me think why not install langchain-chroma FIRST before any other langchain stuff to see what it wants to install? ...
+
+Yeah. Let's try that, shall we ... 
+
+  1) mamba remove -n langchain-chroma --all
+  2) mamba create -n langchain-chroma python=3.11
+  3) mamba activate langchain-chroma
+  4) mamba install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+  5) mamba install conda-forge::sentence-transformers
+  6) mamba install conda-forge::jupyterlab
+  7) mamba install conda-forge::ipywidgets
+
+OK. So now lets try to install langchain-chroma and see what we get ... 
+
+
+        (langchain-chroma) rob@rob-MS-7C91:~$ mamba install conda-forge::langchain-chroma
+
+        Looking for: ['conda-forge::langchain-chroma']
+
+        conda-forge/linux-64                                        Using cache
+        conda-forge/noarch                                          Using cache
+        conda-forge/linux-64                                        Using cache
+        conda-forge/noarch                                          Using cache
+
+        Pinned packages:
+        - python 3.11.*
+
+
+        Transaction
+
+        Prefix: /home/rob/miniforge3/envs/langchain-chroma
+
+        Updating specs:
+
+        - conda-forge::langchain-chroma
+        - ca-certificates
+        - certifi
+        - openssl
+
+
+        Package                                      Version  Build                 Channel           Size
+        ──────────────────────────────────────────────────────────────────────────────────────────────────────
+        Install:
+        ──────────────────────────────────────────────────────────────────────────────────────────────────────
+
+        + bcrypt                                       4.2.0  py311h9e33e62_1       conda-forge      248kB
+        + httptools                                    0.6.1  py311h9ecbd09_1       conda-forge       91kB
+        + watchfiles                                  0.24.0  py311h9e33e62_1       conda-forge      396kB
+        + websockets                                    13.1  py311h9ecbd09_0       conda-forge      237kB
+        + pydantic-core                               2.23.4  py311h9e33e62_0       conda-forge     Cached
+        + cryptography                                43.0.3  py311hafd3f86_0       conda-forge        1MB
+        + wrapt                                       1.16.0  py311h9ecbd09_1       conda-forge       63kB
+        + libuv                                       1.49.2  hb9d3cd8_0            conda-forge     Cached
+        + orjson                                     3.10.10  py311h9e33e62_0       conda-forge     Cached
+        + chroma-hnswlib                               0.7.3  py311h5510f57_2       conda-forge      180kB
+        + uvloop                                      0.21.0  py311h9ecbd09_1       conda-forge      677kB
+        + libpulsar                                    3.5.1  hc08aa7d_2            conda-forge     Cached
+        + protobuf                                    4.25.3  py311hbffca5d_1       conda-forge      399kB
+        + pulsar-client                                3.5.0  py311hfdbb021_1       conda-forge      356kB
+        + grpcio                                      1.62.2  py311ha6695c7_0       conda-forge        1MB
+        + python-multipart                            0.0.17  pyhff2d567_0          conda-forge     Cached
+        + starlette                                   0.41.2  pyha770c72_0          conda-forge     Cached
+        + dnspython                                    2.7.0  pyhff2d567_0          conda-forge     Cached
+        + importlib-resources                          6.4.5  pyhd8ed1ab_0          conda-forge     Cached
+        + pypika                                      0.48.9  pyhd8ed1ab_0          conda-forge     Cached
+        + tenacity                                     8.5.0  pyhd8ed1ab_0          conda-forge     Cached
+        + python-dotenv                                1.0.1  pyhd8ed1ab_0          conda-forge     Cached
+        + click                                        8.1.7  unix_pyh707e725_0     conda-forge     Cached
+        + durationpy                                     0.9  pyhd8ed1ab_0          conda-forge     Cached
+        + annotated-types                              0.7.0  pyhd8ed1ab_0          conda-forge     Cached
+        + backoff                                      2.2.1  pyhd8ed1ab_0          conda-forge     Cached
+        + monotonic                                      1.5  pyhd8ed1ab_1          conda-forge     Cached
+        + opentelemetry-semantic-conventions          0.37b0  pyhd8ed1ab_0          conda-forge       29kB
+        + jsonpatch                                     1.33  pyhd8ed1ab_0          conda-forge     Cached
+        + cachetools                                   5.5.0  pyhd8ed1ab_0          conda-forge     Cached
+        + pyu2f                                        0.1.5  pyhd8ed1ab_0          conda-forge     Cached
+        + pyasn1                                       0.6.1  pyhd8ed1ab_1          conda-forge     Cached
+        + pyjwt                                        2.9.0  pyhd8ed1ab_1          conda-forge     Cached
+        + blinker                                      1.8.2  pyhd8ed1ab_0          conda-forge     Cached
+        + python-flatbuffers                         24.3.25  pyh59ac667_0          conda-forge     Cached
+        + shellingham                                  1.5.4  pyhd8ed1ab_0          conda-forge     Cached
+        + mdurl                                        0.1.2  pyhd8ed1ab_0          conda-forge     Cached
+        + humanfriendly                                 10.0  pyhd8ed1ab_6          conda-forge     Cached
+        + pyopenssl                                   24.2.1  pyhd8ed1ab_2          conda-forge     Cached
+        + deprecated                                  1.2.14  pyh1a96a4e_0          conda-forge     Cached
+        + opentelemetry-proto                         1.16.0  pyhd8ed1ab_0          conda-forge       38kB
+        + googleapis-common-protos                    1.65.0  pyhd8ed1ab_0          conda-forge     Cached
+        + email-validator                              2.2.0  pyhd8ed1ab_0          conda-forge     Cached
+        + typer-slim                                  0.12.5  pyhd8ed1ab_0          conda-forge     Cached
+        + uvicorn                                     0.32.0  pyh31011fe_1          conda-forge     Cached
+        + pydantic                                     2.9.2  pyhd8ed1ab_0          conda-forge     Cached
+        + posthog                                      3.6.5  pyhd8ed1ab_0          conda-forge     Cached
+        + pyasn1-modules                               0.4.1  pyhd8ed1ab_0          conda-forge     Cached
+        + rsa                                            4.9  pyhd8ed1ab_0          conda-forge     Cached
+        + oauthlib                                     3.2.2  pyhd8ed1ab_0          conda-forge     Cached
+        + markdown-it-py                               3.0.0  pyhd8ed1ab_0          conda-forge     Cached
+        + coloredlogs                                 15.0.1  pyhd8ed1ab_3          conda-forge     Cached
+        + opentelemetry-api                           1.16.0  pyhd8ed1ab_0          conda-forge       40kB
+        + email_validator                              2.2.0  hd8ed1ab_0            conda-forge     Cached
+        + uvicorn-standard                            0.32.0  h31011fe_1            conda-forge     Cached
+        + langsmith                                  0.1.129  pyhd8ed1ab_0          conda-forge     Cached
+        + google-auth                                 2.35.0  pyhff2d567_0          conda-forge     Cached
+        + requests-oauthlib                            2.0.0  pyhd8ed1ab_0          conda-forge     Cached
+        + rich                                        13.9.3  pyhd8ed1ab_0          conda-forge     Cached
+        + opentelemetry-sdk                           1.16.0  pyhd8ed1ab_0          conda-forge       63kB
+        + langchain-core                              0.2.40  pyhd8ed1ab_0          conda-forge     Cached
+        + python-kubernetes                           31.0.0  pyhd8ed1ab_0          conda-forge     Cached
+        + typer-slim-standard                         0.12.5  hd8ed1ab_0            conda-forge     Cached
+        + opentelemetry-exporter-otlp-proto-grpc      1.16.0  pyhd8ed1ab_0          conda-forge       21kB
+        + typer                                       0.12.5  pyhd8ed1ab_0          conda-forge     Cached
+        + fastapi-cli                                  0.0.5  pyhd8ed1ab_1          conda-forge     Cached
+        + fastapi                                    0.115.4  pyhd8ed1ab_0          conda-forge     Cached
+        + onnxruntime                                 1.19.2  py311h9b445dc_0_cpu   conda-forge       12MB
+        + chromadb                                    0.4.17  py311h38be061_0       conda-forge      772kB
+        + langchain-chroma                             0.1.4  pyhd8ed1ab_0          conda-forge     Cached
+
+        Downgrade:
+        ──────────────────────────────────────────────────────────────────────────────────────────────────────
+
+        - aws-c-common                                0.9.31  hb9d3cd8_0            conda-forge     Cached
+        + aws-c-common                                0.9.23  h4ab18f5_0            conda-forge      236kB
+        - libabseil                               20240722.0  cxx17_h5888daf_1      conda-forge     Cached
+        + libabseil                               20240116.2  cxx17_he02047a_1      conda-forge     Cached
+        - libthrift                                   0.21.0  h0e7cc3e_0            conda-forge     Cached
+        + libthrift                                   0.19.0  hb90f79a_1            conda-forge      409kB
+        - numpy                                        2.1.2  py311h71ddf71_0       conda-forge     Cached
+        + numpy                                       1.26.4  py311h64a7726_0       conda-forge     Cached
+        - s2n                                          1.5.5  h3931f03_0            conda-forge     Cached
+        + s2n                                         1.4.16  he19d79f_0            conda-forge      350kB
+        - aws-checksums                               0.1.20  hf20e7d7_3            conda-forge     Cached
+        + aws-checksums                               0.1.18  he027950_7            conda-forge       50kB
+        - aws-c-sdkutils                              0.1.19  hf20e7d7_6            conda-forge     Cached
+        + aws-c-sdkutils                              0.1.16  he027950_3            conda-forge       55kB
+        - aws-c-compression                           0.2.19  hf20e7d7_4            conda-forge     Cached
+        + aws-c-compression                           0.2.18  he027950_7            conda-forge       19kB
+        - aws-c-cal                                    0.7.4  hd3f4568_4            conda-forge     Cached
+        + aws-c-cal                                   0.6.15  h816f305_1            conda-forge       47kB
+        - libre2-11                               2024.07.02  hbbce691_1            conda-forge     Cached
+        + libre2-11                               2023.09.01  h5a48ba9_2            conda-forge     Cached
+        - libprotobuf                                 5.27.5  h5b01275_2            conda-forge     Cached
+        + libprotobuf                                 4.25.3  hd5b35b9_1            conda-forge     Cached
+        - aws-c-io                                   0.14.20  h389d861_2            conda-forge     Cached
+        + aws-c-io                                    0.14.9  hd3d3696_3            conda-forge      159kB
+        - re2                                     2024.07.02  h77b4e00_1            conda-forge     Cached
+        + re2                                     2023.09.01  h7f4b329_2            conda-forge     Cached
+        - orc                                          2.0.2  h690cf93_1            conda-forge     Cached
+        + orc                                          2.0.1  h17fec99_1            conda-forge        1MB
+        - aws-c-http                                  0.8.10  h6bb76cc_5            conda-forge     Cached
+        + aws-c-http                                   0.8.2  h75ac8c9_3            conda-forge      195kB
+        - aws-c-event-stream                           0.5.0  h72d8268_0            conda-forge     Cached
+        + aws-c-event-stream                           0.4.2  hb72ac1a_14           conda-forge       54kB
+        - libgrpc                                     1.65.5  hf5c653b_0            conda-forge     Cached
+        + libgrpc                                     1.62.2  h15f2491_0            conda-forge     Cached
+        - aws-c-mqtt                                  0.10.7  had056f2_5            conda-forge     Cached
+        + aws-c-mqtt                                  0.10.4  hb0abfc5_7            conda-forge      163kB
+        - aws-c-auth                                  0.7.31  hcdce11a_5            conda-forge     Cached
+        + aws-c-auth                                  0.7.22  hf36ad8f_6            conda-forge      106kB
+        - libgoogle-cloud                             2.30.0  h438788a_0            conda-forge     Cached
+        + libgoogle-cloud                             2.25.0  h2736e30_0            conda-forge        1MB
+        - aws-c-s3                                     0.7.0  hc85afc5_0            conda-forge     Cached
+        + aws-c-s3                                    0.5.10  h44b787d_4            conda-forge      110kB
+        - libgoogle-cloud-storage                     2.30.0  h0121fbd_0            conda-forge     Cached
+        + libgoogle-cloud-storage                     2.25.0  h3d9a0c8_0            conda-forge      761kB
+        - aws-crt-cpp                                 0.29.0  h07ed512_0            conda-forge     Cached
+        + aws-crt-cpp                                0.26.12  he940a02_1            conda-forge      340kB
+        - aws-sdk-cpp                               1.11.407  h9c41b47_6            conda-forge     Cached
+        + aws-sdk-cpp                               1.11.329  h0f5bab0_6            conda-forge        4MB
+        - libarrow                                    18.0.0  h9c5d0aa_0_cuda       conda-forge     Cached
+        + libarrow                                    16.1.0  h9102155_9_cpu        conda-forge        8MB
+        - pyarrow-core                                18.0.0  py311hcae7c52_0_cuda  conda-forge     Cached
+        + pyarrow-core                                16.1.0  py311h8c3dac4_4_cpu   conda-forge        4MB
+        - libparquet                                  18.0.0  hdbc8f64_0_cuda       conda-forge     Cached
+        + libparquet                                  16.1.0  h6a7eafb_9_cpu        conda-forge        1MB
+        - libarrow-acero                              18.0.0  h530483c_0_cuda       conda-forge     Cached
+        + libarrow-acero                              16.1.0  hac33072_9_cpu        conda-forge      600kB
+        - libarrow-dataset                            18.0.0  h530483c_0_cuda       conda-forge     Cached
+        + libarrow-dataset                            16.1.0  hac33072_9_cpu        conda-forge      581kB
+        - libarrow-substrait                          18.0.0  h8ffff87_0_cuda       conda-forge     Cached
+        + libarrow-substrait                          16.1.0  h7e0c224_9_cpu        conda-forge      549kB
+        - pyarrow                                     18.0.0  py311hbd00459_0       conda-forge     Cached
+        + pyarrow                                     16.1.0  py311hbd00459_4       conda-forge       28kB
+
+        Summary:
+
+        Install: 70 packages
+        Downgrade: 31 packages
+
+        Total download: 43MB
+
+        ──────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+        Confirm changes: [Y/n] 
+
+Interesting! So all those downgrades are still there! They are not because of an existing install of langchain! And this does not even install langchain!! ... I was expecting it to ALSO install langchain because it has not yet been installed! Jeeze!!
+
+OK. So yeah, let's install langchain ... 
+
+ 8) mamba install conda-forge::langchain==0.2.16
+ 9) mamba install conda-forge::openai
+
+Now let's try langchain-openai ... 
+
+10) mamba install conda-forge::langchain-openai=0.1.25
+11) pip install langchain-community==0.2.17
+
+OK. So up to this point, there have been no breaking changes or downgrades. Now let's try langchain-chroma ...
+
+12) mamba install conda-forge::langchain-chroma
+
+This install langchain-chroma 0.1.4, which is the latest version. 30 Packages were downgraded to accomodate this install.
+
+
