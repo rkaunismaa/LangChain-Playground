@@ -999,6 +999,12 @@ Now back to the 'what version of langchain should I install??' question ....
  
  Signed up with Mistral.ai. Checking out their payment plans. Nice! They have a free tier! Hmm, the MistralAI code sample still uses OpenAI for embeddings! 
 
+ Hmm looks like we need langchain_huggingface for the langchain-chroma environment. 
+
+ 
+ mamba activate langchain-chroma
+ 13) pip install langchain-huggingface==0.0.3
+
 
 
 
