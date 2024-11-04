@@ -992,7 +992,9 @@ Now back to the 'what version of langchain should I install??' question ....
  11) pip install langchain-community==0.2.17
  12) pip install langchain-anthropic==0.1.23
  13) pip install langgraph==0.2.40
- 14) 
+
+ These langchain versions were selected to ensure langchain-core was not changed.
+ 
 
 
 
