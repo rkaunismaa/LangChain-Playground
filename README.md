@@ -944,4 +944,57 @@ OK. So up to this point, there have been no breaking changes or downgrades. Now 
 
 This install langchain-chroma 0.1.4, which is the latest version. 30 Packages were downgraded to accomodate this install.
 
+## Monday, November 4, 2024
+
+Let's get back to our initial langchain environment.
+
+mamba activate langchain
+
+ 9) pip install langchain-anthropic
+10) pip install langchain-community==0.2.17
+
+FFS ... I ran the above install and it changed ... 
+
+        Installing collected packages: mypy-extensions, marshmallow, typing-inspect, dataclasses-json, langchain-core, langchain-text-splitters, langchain, langchain-community
+        Attempting uninstall: langchain-core
+        Found existing installation: langchain-core 0.3.15
+        Uninstalling langchain-core-0.3.15:
+        Successfully uninstalled langchain-core-0.3.15
+        Attempting uninstall: langchain-text-splitters
+        Found existing installation: langchain-text-splitters 0.3.1
+        Uninstalling langchain-text-splitters-0.3.1:
+        Successfully uninstalled langchain-text-splitters-0.3.1
+        Attempting uninstall: langchain
+        Found existing installation: langchain 0.3.5
+        Uninstalling langchain-0.3.5:
+        Successfully uninstalled langchain-0.3.5
+        ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+        langserve 0.3.0 requires langchain-core<0.4,>=0.3, but you have langchain-core 0.2.43 which is incompatible.
+        langchain-openai 0.2.4 requires langchain-core<0.4.0,>=0.3.13, but you have langchain-core 0.2.43 which is incompatible.
+        langchain-anthropic 0.2.4 requires langchain-core<0.4.0,>=0.3.15, but you have langchain-core 0.2.43 which is incompatible.
+        Successfully installed dataclasses-json-0.6.7 langchain-0.2.16 langchain-community-0.2.17 langchain-core-0.2.43 langchain-text-splitters-0.2.4 marshmallow-3.23.1 mypy-extensions-1.0.0 typing-inspect-0.9.0
+
+Dammit ... I bet stuff is now broken! Idiot! Sigh, gonna rebuild the langchain environment ... 
+
+  1) mamba remove -n langchain --all
+  2) mamba create -n langchain python=3.11
+  3) mamba activate langchain
+  4) mamba install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+  5) mamba install conda-forge::sentence-transformers
+  6) mamba install conda-forge::jupyterlab
+  7) mamba install conda-forge::ipywidgets
+
+Now back to the 'what version of langchain should I install??' question .... 
+
+  8) mamba install conda-forge::langchain==0.2.16
+  9) mamba install conda-forge::openai
+ 10) mamba install conda-forge::langchain-openai==0.1.25
+ 11) pip install langchain-community==0.2.17
+ 12) pip install langchain-anthropic==0.1.23
+ 13) pip install langgraph==0.2.40
+ 14) 
+
+
+
+
 
