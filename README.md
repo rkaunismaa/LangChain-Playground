@@ -1001,9 +1001,13 @@ Now back to the 'what version of langchain should I install??' question ....
 
  Hmm looks like we need langchain_huggingface for the langchain-chroma environment. 
 
- 
  mamba activate langchain-chroma
  13) pip install langchain-huggingface==0.0.3
+
+ We also want to install to the langchain environment ...
+
+ mamba activate langchain
+  14) pip install langchain-huggingface==0.0.3
 
 
 
