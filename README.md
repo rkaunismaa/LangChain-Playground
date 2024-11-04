@@ -994,7 +994,10 @@ Now back to the 'what version of langchain should I install??' question ....
  13) pip install langgraph==0.2.40
 
  These langchain versions were selected to ensure langchain-core was not changed.
+
+ Hmm I am thinking of exploring other paid llm api's other than OpenAI. Had a look at Anthropic, but they only provide a fixed monthly cost, so on thanks. I want something like OpenAI, pay by usage, so if I don't hit it for a month, there is no money wasted.
  
+ Signed up with Mistral.ai. Checking out their payment plans. Nice! They have a free tier! Hmm, the MistralAI code sample still uses OpenAI for embeddings! 
 
 
 
