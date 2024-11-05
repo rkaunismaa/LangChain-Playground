@@ -22,4 +22,5 @@ Model_Evaluation/mistralai/Mistral-7B-Instruct-v0.3/data/
 Local RAG Chatbot/chroma_db_nccn/
 
 sqlite/
+LangChain Tutorials/LMStudio/Chinook.db
 LangChain Tutorials/Chinook.db

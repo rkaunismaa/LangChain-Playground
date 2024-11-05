@@ -1011,8 +1011,36 @@ Now back to the 'what version of langchain should I install??' question ....
 
   Looks like we some more stuff installed to the langchain environment ...
 
-   15) 
+   15) mamba install conda-forge::sqlite
 
+   16) mamba install conda-forge::faiss-cpu
+
+   Installing faiss-gpu would have changed a lot of libraries, so I didn't run it.
+
+   FFS! Something is now broken in the langchain environment, but seems to be working in the langchain-chroma environment ... 
+
+   ## Tuesday, November 5, 2024
+
+   Gonna rebuild the langchain environment because it is now broken ... sigh ... 
+
+  1) mamba remove -n langchain --all
+  2) mamba create -n langchain python=3.11
+  3) mamba activate langchain
+  4) mamba install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+  5) mamba install conda-forge::sentence-transformers
+  6) mamba install conda-forge::jupyterlab
+  7) mamba install conda-forge::ipywidgets
+  8) mamba install conda-forge::langchain==0.2.16
+  9) mamba install conda-forge::openai
+ 10) mamba install conda-forge::langchain-openai==0.1.25
+ 11) pip install langchain-community==0.2.17
+ 12) pip install langchain-anthropic==0.1.23
+ 13) pip install langgraph==0.2.40
+ 14) pip install langchain-huggingface==0.0.3
+
+ OK! Nice! Now the langchain environment no longer throws that error in the 'LangChain Tutorials/LMStudio/Build a Question Answering system over SQL data.ipynb' notebook.
+
+So again, noticing, how different local models behave differently than OpenAI models, and some langchain code samples fail for this reason.
 
 
 
