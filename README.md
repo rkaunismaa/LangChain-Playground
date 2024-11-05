@@ -1042,6 +1042,12 @@ Now back to the 'what version of langchain should I install??' question ....
 
 So again, noticing, how different local models behave differently than OpenAI models, and some langchain code samples fail for this reason.
 
+Hmm need to install langchain-ollama to the langchain-chroma environment.
+
+mamba activate langchain-chroma
+
+ 14) pip install langchain-ollama==0.1.3
+
 
 
 
