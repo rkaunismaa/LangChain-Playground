@@ -1009,6 +1009,10 @@ Now back to the 'what version of langchain should I install??' question ....
  mamba activate langchain
   14) pip install langchain-huggingface==0.0.3
 
+  Looks like we some more stuff installed to the langchain environment ...
+
+   15) 
+
 
 
 
