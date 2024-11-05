@@ -1048,6 +1048,12 @@ mamba activate langchain-chroma
 
  14) pip install langchain-ollama==0.1.3
 
+ Now I need pypdf for the langchain environment.
+
+ mamba activate langchain
+
+  15) mamba install conda-forge::pypdf
+
 
 
 
